@@ -3,7 +3,7 @@
 > 在这里，我向墨渊、EncVar、tangge233等Nova开发者们说一声对不起，我没有经过允许就仿照UI自己绘了一个Nova Imitation。
 > 因此我会隆重的感谢你们的付出！没有你们！这个项目就根本不可能出现啦~
 
-但是，在这里我将向你们隆重的介绍：Nova Imitation！
+但是，在这里我将向你们隆重的介绍：Nova Imitation！原项目地址：[点我进入](https://github.com/PCL-Community/PCL2.Nova.App)
 
 该项目使用tauri写成，在此分外感谢tauri开发团队~
 
