@@ -40,7 +40,7 @@
     <transition name="slide" @after-leave="traLeave">
         <div v-if="b_show_all" class="content-box-class">
             <div id="content-title">{{ b_title }}</div>
-            <div id="content">{{ b_content }}</div>
+            <div id="content" v-html="b_content"></div>
             <button class="return-button cursor-pointer" v-for="(b, i) in b_button" @click="buttonClick(i)">{{ b == "ok" ? "确认" : b == "cancel" ? "取消" : b == "yes" ? "是" : b == "no" ? "否" : b }}</button>
         </div>
     </transition>
@@ -139,6 +139,7 @@
         height: 30px;
         margin-right: 10px;
         margin-bottom: 10px;
+        margin-left: 10px;
         float: right;
         background-color: v-bind(dark);
         border-radius: 6px;
