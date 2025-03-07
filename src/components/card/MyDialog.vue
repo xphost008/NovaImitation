@@ -137,9 +137,7 @@
     .return-button {
         width: 60px;
         height: 30px;
-        margin-right: 10px;
-        margin-bottom: 10px;
-        margin-left: 10px;
+        margin: 10px;
         float: right;
         background-color: v-bind(dark);
         border-radius: 6px;
