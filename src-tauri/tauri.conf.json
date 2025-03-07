@@ -1,0 +1,56 @@
+{
+  "$schema": "https://schema.tauri.app/config/2",
+  "productName": "tank_trait_trigger",
+  "version": "0.1.0",
+  "identifier": "net.tank-trait-trigger.app",
+  "build": {
+    "beforeDevCommand": "pnpm dev",
+    "devUrl": "http://localhost:1420",
+    "beforeBuildCommand": "pnpm build",
+    "frontendDist": "../dist"
+  },
+  "app": {
+    "windows": [
+      {
+        "title": "tank_trait_trigger",
+        "width": 1024,
+        "height": 614,
+        "minHeight": 614,
+        "minWidth": 1024,
+        "decorations": false,
+        "maximizable": false
+      }
+    ],
+    "security": {
+      "capabilities": [
+        {
+          "identifier": "main-user-files-write",
+          "description": "This capability allows the `main` window on macOS and Windows access to `filesystem` write related commands and `dialog` commands to enable programatic access to files selected by the user.",
+          "windows": [
+            "main"
+          ],
+          "permissions": [
+            "core:window:allow-start-dragging",
+            "core:window:allow-close",
+            "core:window:allow-minimize",
+            "core:default"
+          ],
+          "platforms": ["windows"]
+        }
+      ],
+      "csp": null
+    }
+  },
+  "bundle": {
+    "active": true,
+    "targets": "all",
+    "icon": [
+      "icons/32x32.png",
+      "icons/128x128.png",
+      "icons/128x128@2x.png",
+      "icons/icon.icns",
+      "icons/icon.ico"
+    ]
+  }
+
+}
