@@ -14,7 +14,7 @@
     }, {immediate: true})
 </script>
 <template>
-    <div class="switch" @click="check_value = !check_value">
+    <div class="switch">
         <button class="toggle-span"></button>
     </div>
 </template>
