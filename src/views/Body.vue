@@ -57,12 +57,13 @@
         width: 144px;
         height: 100%;
         background-color: v-bind(dark);
+        transition: background-color 0.2s;
     }
     .slide-enter-active {
-        animation: leftSlideIn 0.15s;
+        animation: leftSlideIn 0.2s;
     }
     .slide-leave-active {
-        animation: leftSlideOut 0.15s;
+        animation: leftSlideOut 0.2s;
     }
     .component-right {
         position: absolute;
@@ -73,10 +74,10 @@
         overflow-y: auto;
     }
     .slide-right-enter-active {
-        animation: rightSlideIn 0.15s;
+        animation: rightSlideIn 0.2s;
     }
     .slide-right-leave-active {
-        animation: rightSlideOut 0.15s;
+        animation: rightSlideOut 0.2s;
     }
     @keyframes leftSlideIn {
         from {
