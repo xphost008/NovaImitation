@@ -248,7 +248,6 @@
                 if(y < he - 1)
                     if(grids.value[y + 1][x].m == 1)
                         k++
-                console.log(cc, k)
                 // 如果格子本身的数字小于或者等于周围插旗子的数字，则开启
                 if(cc > k) return
                 if(x > 0 && y > 0)
