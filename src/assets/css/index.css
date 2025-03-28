@@ -1,0 +1,24 @@
+* {
+    margin: 0;
+    padding: 0;
+    user-select: none;
+    font-family: 'PCL';
+    /* overflow: hidden; */
+}
+@font-face {
+    font-family: 'PCL';
+    src: url('../fonts/PCL-English.ttf');
+}
+.font-pcl {
+    font-family: 'PCL';
+}
+.cursor-pointer {
+    cursor: pointer;
+}
+.side-icon {
+    position: absolute;
+    width: 20px;
+    height: 20px;
+    left: 13px;
+    top: 10px;
+}
