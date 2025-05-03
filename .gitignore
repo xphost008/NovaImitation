@@ -1,8 +1,8 @@
 build/
 frontend/node_modules
 frontend/dist
-fontend/package-lock.json
-fontend/package.json.md5
+frontend/package-lock.json
+frontend/package.json.md5
 .idea/
 go.sum
 
