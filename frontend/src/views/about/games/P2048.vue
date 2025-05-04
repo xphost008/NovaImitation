@@ -53,6 +53,10 @@ function compArray(input: number[]): number[] {
       //首先找一遍是否相邻
       score.value += arr[i]
       arr[i] *= 2
+      if(arr[i] == 2048) {
+        is_success.value = "你赢了！"
+        is_start.value = false
+      }
       arr[i + 1] = 0
       i += 2
       merged = true
@@ -71,6 +75,10 @@ function compArray(input: number[]): number[] {
         if(canMerge) {
           score.value += arr[i]
           arr[i] *= 2
+          if(arr[i] == 2048) {
+            is_success.value = "你赢了！"
+            is_start.value = false
+          }
           arr[j] = 0
           i = j + 1
           merged = true
