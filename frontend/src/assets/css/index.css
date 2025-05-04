@@ -2,7 +2,7 @@
     margin: 0;
     padding: 0;
     user-select: none;
-    font-family: 'PCL';
+    font-synthesis: none;
     /* overflow: hidden; */
 }
 @font-face {
@@ -10,7 +10,7 @@
     src: url('../fonts/PCL-English.ttf');
 }
 .font-pcl {
-    font-family: 'PCL';
+    font-family: 'PCL', serif;
 }
 .cursor-pointer {
     cursor: pointer;

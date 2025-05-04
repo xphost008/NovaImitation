@@ -1,4 +1,5 @@
-import { ref } from 'vue'
+import {ref} from 'vue'
+
 export const dark_mode = ref(false)
 export const current_view = ref('home')
 export const current_account = ref('Microsoft')

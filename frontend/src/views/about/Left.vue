@@ -69,6 +69,18 @@
                 </svg>
                 <span style="margin-left: -30px;">扫雷</span>
             </MySidebarButton>
+            <MySidebarButton :isChecked="current_about == 'P2048'" @click="clickSideButton('P2048')">
+                <svg
+                    xmlns="http://www.w3.org/2000/svg"
+                    viewBox="0 0 24 24"
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                    stroke-width="2"
+                    fill="none" class="side-icon">
+                    <path d="M8 8a4 4 0 1 1 8 0c0 1.098-.564 2.025-1.159 2.815L8 20h8"/>
+                </svg>
+                <span style="margin-left: -30px;">2048</span>
+            </MySidebarButton>
         </div>
     </div>
 </template>
@@ -89,7 +101,7 @@
         overflow: hidden;
     }
     .grid[open] + div {
-        max-height: 40px;
+        max-height: 80px;
     }
 </style>
 <script lang="ts">

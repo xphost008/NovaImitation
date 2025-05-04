@@ -10,7 +10,12 @@ const width = ref(isCheckedProps.width);
 const height = ref(isCheckedProps.height)
 const maxValue = ref(isCheckedProps.maxValue)
 import { ref, watch } from 'vue'
+import { dark_mode } from "../../logic/changeBody";
 const curwidth = ref("")
+const backcolor = ref(dark_mode.value ? '#303030' : 'lightgray')
+watch(dark_mode, value => {
+  backcolor.value = value ? '#303030' : 'lightgray'
+})
 watch(() => isCheckedProps.currentValue, v => {
   curwidth.value = (v / maxValue.value) * parseInt(width.value) + "%"
 }, {immediate: true})
@@ -26,7 +31,7 @@ watch(() => isCheckedProps.currentValue, v => {
 .progress-container {
   width: v-bind(width);
   height: v-bind(height);
-  background-color: lightgray;
+  background-color: v-bind(backcolor);
   border-radius: 1000px;
   overflow: hidden;
 }

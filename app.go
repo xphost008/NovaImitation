@@ -23,9 +23,9 @@ func (a *App) startup(ctx context.Context) {
 }
 
 func (a *App) StartDownload() {
-	for progress := 0; progress <= 100; progress += 10 {
-		runtime.EventsEmit(a.ctx, "download_progress", progress)
+	for progress := 10; progress <= 100; progress += 10 {
 		time.Sleep(time.Second)
+		runtime.EventsEmit(a.ctx, "download_progress", progress)
 	}
 	runtime.EventsEmit(a.ctx, "download_success")
 }

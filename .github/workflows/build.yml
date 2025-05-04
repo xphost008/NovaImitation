@@ -1,0 +1,62 @@
+name: Wails build
+
+on:
+  push:
+    tags:
+      - '*'
+
+env:
+  NODE_OPTIONS: "--max-old-space-size=4096"
+
+jobs:
+  build:
+    strategy:
+      fail-fast: false
+      matrix:
+        build:
+          - name: 'App'
+            platform:  'linux/amd64'
+            os: 'ubuntu-latest'
+          - name: 'App'
+            platform:  'windows/amd64'
+            os: 'windows-latest'
+          - name: 'App'
+            platform:  'darwin/universal'
+            os: 'macos-latest'
+
+    runs-on: ${{ matrix.build.os }}
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+        with:
+          submodules: recursive
+
+      - name: Build wails
+        uses: dAppServer/wails-build-action@v3
+        id: build
+        with:
+          build-name: '${{ matrix.build.name }}'
+          build-platform: ${{ matrix.build.platform }}
+          package: false
+          go-version: '1.23'
+      - name: Build Project
+        run: walis build
+      - name: zip Project
+        run: |
+          mkdir releases
+          if ("${{ runner.os }}" -eq "Linux") {
+            cd build
+            zip -9 -r "../Nova-Imitation-Linux.zip" .
+          } elseif ("${{ runner.os }}" -eq "macOS") {
+            cd build
+            zip -9 -r "../Nova-Imitation-macOS.zip" .
+          } else {
+            cd build
+            7z a "../Nova-Imitation-Windows.zip" ./*
+          }
+        shell: pwsh
+      - name: Upload all Artifacts
+        uses: actions/upload-artifact@v4
+        with:
+          name: ${{ runner.os }}-bundle
+          path: ./Nova-Imitation-${{ runner.os }}.zip
