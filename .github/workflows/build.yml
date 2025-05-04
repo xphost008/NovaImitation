@@ -13,13 +13,13 @@ jobs:
       fail-fast: false
       matrix:
         build:
-          - name: 'BuildLinux'
+          - name: 'NovaImitation'
             platform: 'linux/amd64'
             os: 'ubuntu-latest'
-          - name: 'BuildWindows'
+          - name: 'NovaImitation'
             platform: 'windows/amd64'
             os: 'windows-latest'
-          - name: 'BuildMacOS'
+          - name: 'NovaImitation'
             platform: 'darwin/universal'
             os: 'macos-latest'
 
