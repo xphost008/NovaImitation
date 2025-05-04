@@ -2,8 +2,7 @@ name: Wails build
 
 on:
   push:
-    tags:
-      - '*'
+    branches: [main]
 
 env:
   NODE_OPTIONS: "--max-old-space-size=4096"
@@ -32,7 +31,7 @@ jobs:
           submodules: recursive
 
       - name: Build wails
-        uses: dAppServer/wails-build-action@v3
+        uses: dAppServer/wails-build-action@v2.2
         id: build
         with:
           build-name: '${{ matrix.build.name }}'
@@ -45,7 +44,6 @@ jobs:
 
       - name: zip Project
         run: |
-          mkdir releases
           if ("${{ runner.os }}" -eq "Linux") {
             cd build
             zip -9 -r "../Nova-Imitation-Linux.zip" .
