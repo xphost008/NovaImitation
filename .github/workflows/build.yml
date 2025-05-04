@@ -14,14 +14,14 @@ jobs:
       fail-fast: false
       matrix:
         build:
-          - name: 'App'
-            platform:  'linux/amd64'
+          - name: 'Build Linux'
+            platform: 'linux/amd64'
             os: 'ubuntu-latest'
-          - name: 'App'
-            platform:  'windows/amd64'
+          - name: 'Build Windows'
+            platform: 'windows/amd64'
             os: 'windows-latest'
-          - name: 'App'
-            platform:  'darwin/universal'
+          - name: 'Build macOS'
+            platform: 'darwin/universal'
             os: 'macos-latest'
 
     runs-on: ${{ matrix.build.os }}
@@ -39,8 +39,10 @@ jobs:
           build-platform: ${{ matrix.build.platform }}
           package: false
           go-version: '1.23'
+
       - name: Build Project
-        run: walis build
+        run: wails build
+
       - name: zip Project
         run: |
           mkdir releases
