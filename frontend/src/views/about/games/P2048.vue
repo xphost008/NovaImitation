@@ -109,6 +109,7 @@ const up = () => {
     }
     if(genRandomChess()) {
       step.value++
+      is_success.value = ""
     }else{
       is_success.value = "无法往上"
     }
@@ -128,6 +129,7 @@ const down = () => {
     }
     if(genRandomChess()) {
       step.value++
+      is_success.value = ""
     }else{
       is_success.value = "无法往下"
     }
@@ -147,6 +149,7 @@ const left = () => {
     }
     if(genRandomChess()) {
       step.value++
+      is_success.value = ""
     }else{
       is_success.value = "无法往左"
     }
@@ -166,6 +169,7 @@ const right = () => {
     }
     if(genRandomChess()) {
       step.value++
+      is_success.value = ""
     }else{
       is_success.value = "无法往右"
     }
