@@ -20,7 +20,7 @@ let lock_left = false
 let lock_right = false
 const is_success = ref("")
 
-function genRandomChess(): boolean {
+function genRandomChess(bc: boolean): boolean {
   let count = 0;
   for (let c = 0; c < 4; c++) {
     for (let d = 0; d < 4; d++) {
@@ -34,7 +34,22 @@ function genRandomChess(): boolean {
     for (let d = 0; d < 4; d++) {
       if (td0[c][d] == 0) {
         if (count == rand) {
-          td0[c][d] = 2
+          if(bc) {
+            let rand2 = Math.floor(Math.random() * 3)
+            switch (rand2) {
+              case 0:
+                td0[c][d] = 256
+                break
+              case 1:
+                td0[c][d] = 512
+                break
+              case 2:
+                td0[c][d] = 1024
+                break
+            }
+          }else{
+            td0[c][d] = 2
+          }
           return true
         }
         count++
@@ -107,9 +122,11 @@ const up = () => {
         td0[d][c] = p[d]
       }
     }
-    if(genRandomChess()) {
+    if(genRandomChess(false)) {
       step.value++
-      is_success.value = ""
+      if(is_success.value != "你赢了！") {
+        is_success.value = ""
+      }
     }else{
       is_success.value = "无法往上"
     }
@@ -127,9 +144,11 @@ const down = () => {
         td0[e][c] = p[d]
       }
     }
-    if(genRandomChess()) {
+    if(genRandomChess(false)) {
       step.value++
-      is_success.value = ""
+      if(is_success.value != "你赢了！") {
+        is_success.value = ""
+      }
     }else{
       is_success.value = "无法往下"
     }
@@ -147,9 +166,11 @@ const left = () => {
         td0[c][d] = p[d]
       }
     }
-    if(genRandomChess()) {
+    if(genRandomChess(false)) {
       step.value++
-      is_success.value = ""
+      if(is_success.value != "你赢了！") {
+        is_success.value = ""
+      }
     }else{
       is_success.value = "无法往左"
     }
@@ -167,11 +188,22 @@ const right = () => {
         td0[c][e] = p[d]
       }
     }
-    if(genRandomChess()) {
+    if(genRandomChess(false)) {
       step.value++
-      is_success.value = ""
+      if(is_success.value != "你赢了！") {
+        is_success.value = ""
+      }
     }else{
       is_success.value = "无法往右"
+    }
+  }
+}
+function randomGen1() {
+  if(is_start.value) {
+    if(genRandomChess(true)) {
+      is_success.value = "作弊成功"
+    }else{
+      is_success.value = "无法生成"
     }
   }
 }
@@ -187,8 +219,8 @@ function startGame() {
   ])
   is_start.value = true;
   is_success.value = ""
-  genRandomChess()
-  genRandomChess()
+  genRandomChess(false)
+  genRandomChess(false)
 }
 
 onMounted(() => {
@@ -220,6 +252,9 @@ onMounted(() => {
       <MyNormalLabel id="score-label">
         步数：{{ step }}
       </MyNormalLabel>
+      <MyNormalButton id="start-button" @click="randomGen1">
+        作弊生成
+      </MyNormalButton>
       <MyNormalLabel id="score-label">
         {{ is_success }}
       </MyNormalLabel>
