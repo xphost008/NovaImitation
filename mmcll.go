@@ -1,11 +1,11 @@
 package main
 
 import (
+	"NovaImitation/system"
 	"errors"
 	"fmt"
 	"github.com/go-vgo/robotgo"
 	"github.com/shirou/gopsutil/mem"
-	"golang.org/x/sys/windows"
 	"os"
 	"regexp"
 	"runtime"
@@ -36,18 +36,6 @@ func NewMMCLLError(code int32, msg string) *MMCLLError {
 }
 
 // MainMethod.go
-
-// GetWindowsVersion 获取Windows版本
-func GetWindowsVersion() bool {
-	info := windows.RtlGetVersion()
-	if info == nil {
-		return false
-	}
-	if info.MajorVersion >= 10 {
-		return true
-	}
-	return false
-}
 
 // LaunchMethod.go
 
@@ -338,7 +326,7 @@ func (lg launchGame) launch() error {
 		if runtime.GOARCH == "386" {
 			result = append(result, "-Xss1M")
 		}
-		if GetWindowsVersion() {
+		if system.GetWindowsVersion() {
 			result = append(result, "-Dos.name=Windows 10")
 			result = append(result, "-Dos.version=10.0")
 		}

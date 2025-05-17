@@ -1,4 +1,4 @@
-# 这里是Nova Imitation！
+# 这里是PCL2.Nova.App！
 
 > 在这里，我向墨渊、EncVar、tangge233、shenjack等Nova开发者们说一声对不起，我没有经过允许就仿照UI自己绘了一个Nova Imitation。
 > 因此我会隆重的感谢你们的付出！没有你们！这个项目就根本不可能出现啦~
