@@ -1,26 +1,24 @@
-# 这里是PCL2.Nova.App！
+<img src="./frontend/src/assets/images/PCLNova.Dev.png" alt="Logo" height="360" align="left">
 
-> 在这里，我向墨渊、EncVar、tangge233、shenjack等Nova开发者们说一声对不起，我没有经过允许就仿照UI自己绘了一个Nova Imitation。
-> 因此我会隆重的感谢你们的付出！没有你们！这个项目就根本不可能出现啦~
+# PCL II Nova App
 
-但是，在这里我将向你们隆重的介绍：Nova Imitation！原项目地址：[点我进入](https://github.com/PCL-Community/PCL2.Nova.App)
 
-该项目使用目前已切换架构至`wails`写成，在此分外感谢wails开发团队~
+下一代 PCL 启动器，基于官方版 PCL2 的完全重构\
+采用 Web 技术和内存安全的 Go 全新构建\
+这，就是 PCL II: Nova！
 
-这个项目采取了纯vue书写，与此同时，没有使用vue-router、pinia等vue前端库，也没有使用任何第三方的css库以及任何js库。本软件由作者纯手打制作而成！！
 
-为什么取名叫做Nova Imitation？因为Nova这个项目本身就是用tauri写的，而我又做了个仿制版，只是换了个架构为wails罢了，因此称其为Nova Imitation！
+第一个可用（功能有限）发行版计划于 2025.7 之前推出\
+在此之前你可以自行下载代码编译运行\
+请确保安装 Node 21+ 和 GoLang\
+你可以参阅[该网址](https://wails.io/docs/gettingstarted/installation)初始化项目，随后构建~
+<br><br><br><br><br>
+加入 PCL II Nova 交流 1 群，与开发者面对面交流，获取\
+最新资讯：https://qm.qq.com/q/nwBlYWMhHM
 
-自从Nova停更后，该项目将撑起Nova的替代工作，里面的所有内容均由我自由发挥啦！
+有以下须知需要你查阅：
 
-你可以在这里直接获得二进制文件（Only Windows）【[点我获取~](https://wwdy.lanzoub.com/b0sx0e10h)】 密码:eim6
-
-本软件从0.0.3开始进入发布模式，未来不保证能永久更新下去（谁知道呢~
-
-本软件开发日期：2025-02-21。该项目首次发布于：2025-03-07。也就是说整个项目仅仅花了2周时间？！
-
-在此我强烈建议你使用源码构建此文件，而不是等我的二进制文件出来再去使用。因为我源码更新可能会特别频繁，但是二进制文件可能不会！与此同时，由于我电脑仅有Windows操作系统，因此无法编译Linux和MacOS的二进制文件。只能由你自己去编译啦！
-
-如果需要自己构建NovaImitation，你需要下载Go语言，然后请参阅[官方构建教程](https://wails.io/docs/gettingstarted/installation)进行构建！
-
-更新日志：[点我进入](./CHANGELOG.md)
+1. 目前，本项目有[@xphost008](https://github.com/xphost008)进行维护，你可以随时随地查看本项目更新日志：[Changelog](./CHANGELOG.md)
+2. 如果你使用的操作系统与作者的一样，是Windows系统！那么恭喜你，你可以直接从[蓝奏云](https://wwdy.lanzoub.com/b0sx0e10h)直接下载，密码：eim6
+3. 欢迎随时随地收看来自老作者**MoYuan-CN**的新项目[NovaCL](https://github.com/NEXORA-Studios/NovaCL)！！
+4. 如果你还不认识这位新作者的话，你可以参阅[作者的博客](https://xphost008.github.io)。
