@@ -185,12 +185,11 @@ function start() {
 function grid_button_click(x: number, y: number) {
   if (lock) return
   if (!is_start) is_start = true
-  console.log(is_cheat)
   if (![-1, 1, 3].includes(grids.value[y][x].m)) {
     grids.value[y][x].m = -1
     grids.value[y][x].s = grids.value[y][x].p == -1 ? '💣' : grids.value[y][x].p == 0 ? "" : grids.value[y][x].p.toString()
     if (grids.value[y][x].p == -1) {
-      if(!is_cheat) {
+      if(!is_cheat.value) {
         lock = true
         win.value = 2
         for (let k = 0; k < he; k++) {

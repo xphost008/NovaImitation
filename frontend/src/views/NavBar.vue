@@ -20,8 +20,8 @@ watch(dark_mode, value => {
   <div id="all-nav" style="--wails-draggable: drag">
     <div id="icon-title" class="font-pcl">
       PCL II
-      <div class="icon-next back-next">Nova Imitation</div>
-      <div class="icon-next back-dev">Dev</div>
+      <div class="icon-next back-next font-pcl">Nova Imitation</div>
+      <div class="icon-next back-dev font-pcl">Dev</div>
     </div>
     <div id="nav-button-group">
       <button :class="current_view == 'home' ? 'active-button' : ('nav-button cursor-pointer')"
@@ -166,6 +166,7 @@ watch(dark_mode, value => {
   float: left;
   font-size: 25px;
   color: white;
+  vertical-align: middle;
 }
 
 #nav-button-group {
@@ -177,6 +178,7 @@ watch(dark_mode, value => {
   width: 502px;
   height: 36px;
   --wails-draggable: no-drag;
+  vertical-align: middle;
 }
 
 .nav-button {
@@ -262,6 +264,7 @@ watch(dark_mode, value => {
   float: left;
   color: black;
   height: 12px;
+  vertical-align: middle;
 }
 
 .back-next {
