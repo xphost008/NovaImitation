@@ -1,7 +1,7 @@
-package main
+package mmcll
 
 import (
-	"NovaImitation/system"
+	"NovaImitation/info"
 	"errors"
 	"fmt"
 	"github.com/go-vgo/robotgo"
@@ -326,7 +326,7 @@ func (lg launchGame) launch() error {
 		if runtime.GOARCH == "386" {
 			result = append(result, "-Xss1M")
 		}
-		if system.GetWindowsVersion() {
+		if info.GetWindowsVersion() {
 			result = append(result, "-Dos.name=Windows 10")
 			result = append(result, "-Dos.version=10.0")
 		}

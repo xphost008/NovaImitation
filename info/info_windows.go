@@ -1,4 +1,4 @@
-package system
+package info
 
 import "golang.org/x/sys/windows"
 
